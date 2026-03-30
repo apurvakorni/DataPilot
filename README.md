@@ -1,4 +1,4 @@
-# DataPilot- Autonomous Data Analyst Agent 
+# DataPilot- Autonomous Data Analyst Agent 🧭
 
 DataPilot lets you upload any CSV and ask questions in plain English — getting back charts, insights, and evidence-backed analysis generated autonomously by a multi-agent AI pipeline.
 
