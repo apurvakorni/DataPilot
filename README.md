@@ -6,12 +6,6 @@ DataPilot lets you upload any CSV and ask questions in plain English — getting
 
 ---
 
-## Demo
-
-![DataPilot Demo](docs/demo.gif)
-
----
-
 ## What It Does
 
 Most data analysis tools require you to know SQL, Python, or Excel formulas. DataPilot removes that barrier entirely.
