@@ -50,9 +50,10 @@ User Question
 - FastAPI + Python 3.11
 - Pandas, NumPy, Matplotlib, Scikit-learn
 - Anthropic API (Claude Sonnet)
+- LangGraph for agent orchestration
 - Subprocess sandbox with 15s timeout for safe code execution
-- SQLite via SQLAlchemy for session history
-
+- Local file system for upload and session management
+  
 **Frontend**
 - React 18 + Tailwind CSS
 - Recharts for chart rendering
@@ -148,9 +149,6 @@ Open `http://localhost:5173`
 
 ## Key Design Decisions
 
-**Why custom orchestration instead of LangChain?**
-Building the agent loop from scratch makes every step explainable and debuggable. The plan → generate → execute → repair → summarize sequence is explicit code, not framework magic.
-
 **Why subprocess for code execution?**
 Generated code runs in an isolated subprocess with a 15-second timeout. It can only access the uploaded file and if it crashes, the main server keeps running.
 
@@ -159,29 +157,11 @@ Claude performs particularly well on structured code generation tasks — it rel
 
 ---
 
-## Roadmap
-
-**V2**
-- [ ] Multi-turn conversation with memory
-- [ ] Automatic EDA summary on upload
-- [ ] Automatic chart type selection
-- [ ] Downloadable analysis report
-
-**V3**
-- [ ] LangGraph migration for persistence and streaming
-- [ ] Anomaly detection pipeline
-- [ ] Time series forecasting
-- [ ] Multi-dataset support
-- [ ] SQL mode for relational tables
-
----
-
 ## Limitations
 
-- CSV files only
+- CSV/ Excel files only
 - Analysis quality depends on data cleanliness
 - Complex models may hit the 15s sandbox timeout
-- No authentication — designed for local use at MVP stage
 
 ---
 
@@ -191,4 +171,3 @@ MIT
 
 ---
 
-*Built as a portfolio project demonstrating autonomous agent design, LLM tool use, and full-stack AI engineering.*
