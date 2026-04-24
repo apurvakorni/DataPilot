@@ -1,0 +1,40 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply bg-gray-950 text-gray-100 min-h-screen;
+  /* Subtle radial lavender glow anchored at the top */
+  background-image: radial-gradient(
+    ellipse 90% 55% at 50% -5%,
+    rgba(167, 139, 250, 0.11) 0%,
+    rgba(196, 181, 253, 0.05) 45%,
+    transparent 70%
+  );
+  background-attachment: fixed;
+}
+
+/* Lavender-tinted shimmer for loading skeletons */
+.shimmer {
+  background: linear-gradient(
+    90deg,
+    #2e1065 0%,
+    #4c1d95 30%,
+    #5b21b6 50%,
+    #4c1d95 70%,
+    #2e1065 100%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 2s linear infinite;
+}
+
+@keyframes shimmer {
+  0%   { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+/* Thin custom scrollbar */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: #4b5563; border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: #6b7280; }
